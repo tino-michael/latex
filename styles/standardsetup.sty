@@ -1,0 +1,60 @@
+\usepackage{ifluatex}
+
+\ifluatex
+    \usepackage{polyglossia}
+    \setmainlanguage{english}
+    \usepackage{fontspec}
+    \setmainfont{linuxlibertine}
+
+    \usepackage[]{unicode-math}
+\else
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \usepackage{libertine}
+    \usepackage[english]{babel}
+\fi
+
+
+\usepackage{xcolor}
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkorange}{rgb}{1,0.549019607843137,0}
+\definecolor{lightblue}{rgb}{0.247059,0.407843,1}
+
+\usepackage{graphicx}
+
+\usepackage{booktabs}             % table decorations
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}             % calligraphie
+
+\usepackage{siunitx}
+\newcommand\unit[2]{\SI{#1}{#2}}
+
+
+% powerful graphics package
+\usepackage{tikz}
+\usetikzlibrary{plotmarks,patterns,calc,decorations.markings,arrows,
+                decorations.pathmorphing,intersections}
+\tikzset{snake it/.style={decorate, decoration=snake}}
+
+% layer on top of tikz to efficiently draw plots
+\usepackage{pgfplots}
+\usepgflibrary{shapes}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest}
+
+% define some default parameters for consistent figure sizing
+\newlength\figureheight
+\newlength\figurewidth
+\setlength\figureheight{8cm}
+\setlength\figurewidth{10cm}
+
+
+% this `put` can be used anywhere
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+
+% ISO conform date format
+\def\isodate{\leavevmode\hbox{\the\year-\twodigits\month-\twodigits\day}}
+\def\twodigits#1{\ifnum#1<10 0\fi\the#1}
