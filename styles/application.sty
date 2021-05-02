@@ -1,0 +1,63 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{application}
+
+\RequirePackage{standardsetup}
+\usepackage{standardsetup}
+
+
+\RequirePackage{kvoptions}
+
+\DeclareStringOption[Name]{name}
+\DeclareStringOption[]{headerleft}
+\DeclareStringOption[]{headermid}
+\DeclareStringOption[]{headerright}
+\DeclareStringOption[\isodate]{citydate}
+
+\ProcessKeyvalOptions*
+
+\usepackage{multirow}
+
+\pagestyle{empty}
+\usepackage{pdfpages}
+\usepackage{geometry}
+\geometry{hmargin=2cm}
+
+\usepackage{hyperref}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+\setlength{\headheight}{40pt}
+\setlength{\footskip}{43pt}
+\setlength{\topmargin}{-1.5cm}
+\setlength{\textheight}{24cm}
+\setlength{\parindent}{0mm}
+
+
+\fancyhead[L]{\small{\application@headerleft}}
+\fancyhead[C]{\Huge{\application@name}\\
+              \vspace{4pt}\small{\application@headermid}}
+\fancyhead[R]{\small{\application@headerright}}
+\renewcommand{\headrulewidth}{0.75pt}
+\fancyfoot[R]{\application@citydate}
+
+
+\usepackage{setspace}
+\onehalfspacing
+
+\usepackage{titlesec}
+
+\titleformat
+{\section} % command
+{\Large\bfseries\color{darkred}} % format
+{}{}{}[\hrule height 1pt]
+
+
+\titleformat
+{\subsection} % command
+{\large\bfseries} % format
+{} % label
+{0.ex} % sep
+{\vspace{-0pt}} % before-code
+[\vspace{-6pt}] % after-code

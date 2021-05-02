@@ -1,0 +1,100 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[
+    name={my name},
+    % the following are optional and only suggestions,
+    % maybe you want to use a github or twitter handle?
+    headerleft={my email},
+    headermid={postal address},
+    headerright={phone number},
+    citydate={place, 1970-01-01} % defaults to current iso-date
+    ]{application}
+
+
+\begin{document}
+
+\section*{Short Profile}
+\begin{tabular}{r@{•\ \ }l}
+    & quick summary of your experience \\
+    & in a few bullet points\\
+    & longer points can stretch over two rows \\
+    \multicolumn{1}{c}{\ } &
+      with the `multicolumn' command \\
+\end{tabular}
+
+\section*{Practical Experience}
+
+\subsection{1970-01 -- 1980-11 at work place -- in city}
+job position\\
+\begin{tabular}{r@{•\ \ }l}
+    & here, I did this\\
+    & and that
+\end{tabular}
+
+\subsection{1990 -- 2000 at another place -- somewhere else}
+another position\\
+\begin{tabular}{r@{•\ \ }l}
+    & more work being done\\
+    & work work work
+\end{tabular}
+
+\section*{Education}
+\begin{tabular}{rl}
+    \vspace{-12pt}\hspace*{3cm}\\
+    \textbf{2000 -- 2020}
+        & \textbf{degree in this}\\
+        & \textbf{institute}, \textit{city}\\
+    \textbf{1990 -- 2000}
+        & \textbf{another degree}\\
+        & \textbf{another institute}, \textit{another city}\\
+        & Specialisation: \dots\\
+        & Minor: \dots\\
+\end{tabular}
+
+
+\begin{minipage}[t]{.6\textwidth}
+\vspace{10pt}
+\section*{IT Skills}
+\begin{tabular}{ll}
+    \vspace{-18pt}\hspace*{3cm}\\
+    Operating Systems:
+        & the best one \\
+    Languages:
+        & x, y, z \\
+    Libraries / Tools:
+        & tools, tools, tools \\
+        & soo many tools \\
+    Others:
+        & more stuff to write home about, \\
+        & this as well
+\end{tabular}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.325\textwidth}
+\vspace{10pt}
+\section*{Language Skills}
+\begin{tabular}{ll}
+    \vspace*{-18pt}\hspace*{2cm}\\
+    English         & level\\
+    German          & level\\
+    French          & level
+\end{tabular}
+\end{minipage}
+
+
+\section*{even more Skills}
+\begin{tabular}{ll}
+    \vspace{-12pt}\hspace*{3cm}\\
+    your place to flex:
+                    & right here \\
+\end{tabular}
+
+
+
+% feel free to add more sections for additional certificates, publications, conference
+% presentations etc.
+
+% attach diplomas with `pdfpages`:
+% \includepdf[pages=-]{path/to/diploma.pdf}
+
+\end{document}
